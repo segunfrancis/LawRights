@@ -22,18 +22,16 @@ android {
 }
 
 dependencies {
-
+    implementation(project(":data:remote"))
     implementation "androidx.core:core-ktx:$Versions.coreKtxVersion"
     implementation "androidx.appcompat:appcompat:$Versions.appCompatVersion"
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:$Versions.coroutineVersion")
+    implementation "com.google.android.material:material:$Versions.materialVersion"
+    implementation "androidx.navigation:navigation-fragment-ktx:$Versions.navigationVersion"
+    implementation "androidx.navigation:navigation-ui-ktx:$Versions.navigationVersion"
+    implementation "com.jakewharton.timber:timber:$Versions.timberVersion"
     // Dagger Hilt
     implementation "com.google.dagger:hilt-android:$Versions.hiltVersion"
     kapt "com.google.dagger:hilt-android-compiler:$Versions.hiltVersion"
-
-    api "com.squareup.retrofit2:retrofit:$Versions.retrofitVersion"
-    api "com.squareup.retrofit2:converter-gson:$Versions.retrofitVersion"
-    api "com.squareup.okhttp3:logging-interceptor:$Versions.loggingInterceptorVersion"
-
     testImplementation "junit:junit:$Versions.jUnitVersion"
     androidTestImplementation "androidx.test.ext:junit:$Versions.jUnitExtVersion"
     androidTestImplementation "androidx.test.espresso:espresso-core:$Versions.espressoVersion"

@@ -23,15 +23,21 @@ android {
 }
 
 dependencies {
+    implementation(project(":data:remote"))
+    implementation(project(":data:local"))
+    implementation(project(":feature:home"))
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib:${Versions.kotlinVersion}"
     implementation "androidx.core:core-ktx:$Versions.coreKtxVersion"
     implementation "androidx.appcompat:appcompat:$Versions.appCompatVersion"
     implementation "com.google.android.material:material:$Versions.materialVersion"
     implementation "androidx.constraintlayout:constraintlayout:$Versions.constraintLayoutVersion"
+    implementation "com.jakewharton.timber:timber:$Versions.timberVersion"
 
     // Dagger Hilt
     implementation "com.google.dagger:hilt-android:${Versions.hiltVersion}"
+    implementation "androidx.navigation:navigation-fragment-ktx:$Versions.navigationVersion"
+    implementation "androidx.navigation:navigation-ui-ktx:$Versions.navigationVersion"
     kapt "com.google.dagger:hilt-android-compiler:${Versions.hiltVersion}"
 
     testImplementation "junit:junit:$Versions.jUnitVersion"
