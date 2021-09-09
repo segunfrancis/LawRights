@@ -27,6 +27,7 @@ dependencies {
     implementation "androidx.appcompat:appcompat:$Versions.appCompatVersion"
     implementation "com.google.code.gson:gson:$Versions.gsonVersion"
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:$Versions.coroutineVersion")
+    implementation "androidx.paging:paging-runtime:$Versions.pagingVersion"
 
     // Dagger Hilt
     implementation "com.google.dagger:hilt-android:$Versions.hiltVersion"

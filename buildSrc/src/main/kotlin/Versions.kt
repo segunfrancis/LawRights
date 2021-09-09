@@ -21,6 +21,8 @@ object Versions {
     const val gsonVersion = "2.8.8"
     const val coroutineVersion = "1.5.0"
     const val timberVersion = "5.0.1"
+    const val pagingVersion = "3.0.1"
+    const val lifecycleVersion = "2.3.1"
 
     const val jUnitVersion = "4.13.2"
     const val jUnitExtVersion = "1.1.3"

@@ -49,15 +49,15 @@ class RemoteModule {
 
     @Provides
     fun provideToken(preferences: SharedPreferences): String? {
-        return preferences.getString(TOKEN_PREF_KEY, null)
+        return preferences.getString(TOKEN_PREF_KEY, "")
     }
 
-    @Provides
+   /* @Provides
     fun provideHeaderInterceptor(token: String?): Interceptor {
         return if (token != null) Interceptor {
             val original: Request = it.request()
             val request: Request = original.newBuilder()
-                .header("Bearer", token)
+                .header("bearer", token)
                 .method(original.method, original.body)
                 .build()
             it.proceed(request)
@@ -66,15 +66,15 @@ class RemoteModule {
                 it.proceed(it.request().newBuilder().build())
             }
         }
-    }
+    }*/
 
     @Provides
-    fun provideClient(loggingInterceptor: HttpLoggingInterceptor, interceptor: Interceptor): OkHttpClient {
+    fun provideClient(loggingInterceptor: HttpLoggingInterceptor): OkHttpClient {
         return OkHttpClient().newBuilder()
             .callTimeout(NETWORK_TIMEOUT, TimeUnit.SECONDS)
             .connectTimeout(NETWORK_TIMEOUT, TimeUnit.SECONDS)
             .addInterceptor(loggingInterceptor)
-            .addNetworkInterceptor(interceptor)
+            //.addNetworkInterceptor(interceptor)
             .build()
     }
 

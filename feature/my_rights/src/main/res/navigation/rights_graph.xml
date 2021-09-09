@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rights_graph"
+    app:startDestination="@id/myRightsFragment">
+
+    <dialog
+        android:id="@+id/myRightsFragment"
+        android:name="com.segunfrancis.feature.my_rights.MyRightsFragment"
+        android:label="fragment_my_rights"
+        tools:layout="@layout/fragment_my_rights">
+        <deepLink
+            android:id="@+id/deepLink"
+            app:uri="https://com.segunfrancis.feature/myrights" />
+    </dialog>
+</navigation>

@@ -16,17 +16,16 @@ class HomeViewModel @Inject constructor(private val remoteRepository: RemoteRepo
 
     private val exceptionHandler: CoroutineExceptionHandler =
         CoroutineExceptionHandler { _, throwable ->
-
             Timber.e(throwable)
         }
 
     init {
         viewModelScope.launch(exceptionHandler) {
             val loginResponse = remoteRepository.login()
-            remoteRepository.addToken(loginResponse.access_token).collect {
+            Timber.d("LoginResponse: $loginResponse")
+            remoteRepository.addToken("Bearer ".plus(loginResponse.access_token)).collect {
                 Timber.d("Token updated")
             }
-            Timber.d("LoginResponse: $loginResponse")
         }
     }
 }

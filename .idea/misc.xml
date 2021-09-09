@@ -4,7 +4,10 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2578125" />
+        <entry key="common/src/main/res/drawable/ic_right.xml" value="0.1465" />
         <entry key="feature/home/src/main/res/layout/fragment_home.xml" value="0.23055555555555557" />
+        <entry key="feature/my_rights/src/main/res/layout/fragment_my_rights.xml" value="0.2578125" />
+        <entry key="feature/my_rights/src/main/res/layout/item_rights.xml" value="0.2578125" />
       </map>
     </option>
   </component>
