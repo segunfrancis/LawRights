@@ -1,0 +1,40 @@
+plugins {
+    id("com.android.application")
+    id("org.jetbrains.kotlin.android")
+    id("kotlin-kapt")
+    id("dagger.hilt.android.plugin")
+    id("kotlin-android")
+    id("androidx.navigation.safeargs.kotlin")
+}
+
+android {
+    defaultConfig {
+        applicationId "com.segunfrancis.lawrights"
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:${Versions.kotlinVersion}"
+    implementation "androidx.core:core-ktx:$Versions.coreKtxVersion"
+    implementation "androidx.appcompat:appcompat:$Versions.appCompatVersion"
+    implementation "com.google.android.material:material:$Versions.materialVersion"
+    implementation "androidx.constraintlayout:constraintlayout:$Versions.constraintLayoutVersion"
+
+    // Dagger Hilt
+    implementation "com.google.dagger:hilt-android:${Versions.hiltVersion}"
+    kapt "com.google.dagger:hilt-android-compiler:${Versions.hiltVersion}"
+
+    testImplementation "junit:junit:$Versions.jUnitVersion"
+    androidTestImplementation "androidx.test.ext:junit:$Versions.jUnitExtVersion"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$Versions.espressoVersion"
+}

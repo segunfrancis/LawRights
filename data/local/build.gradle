@@ -1,0 +1,43 @@
+plugins {
+    id("com.android.library")
+    id("org.jetbrains.kotlin.android")
+    id("kotlin-kapt")
+    id("dagger.hilt.android.plugin")
+}
+
+android {
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = Versions.jvmTarget
+    }
+}
+
+dependencies {
+
+    implementation "androidx.core:core-ktx:$Versions.coreKtxVersion"
+    implementation "androidx.appcompat:appcompat:$Versions.appCompatVersion"
+    implementation "com.google.code.gson:gson:$Versions.gsonVersion"
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:$Versions.coroutineVersion")
+
+    // Dagger Hilt
+    implementation "com.google.dagger:hilt-android:$Versions.hiltVersion"
+    kapt "com.google.dagger:hilt-android-compiler:$Versions.hiltVersion"
+
+    // room database
+    implementation "androidx.room:room-ktx:$Versions.roomVersion"
+    implementation "androidx.room:room-runtime:$Versions.roomVersion"
+    kapt "androidx.room:room-compiler:$Versions.roomVersion"
+
+    testImplementation "junit:junit:$Versions.jUnitVersion"
+    androidTestImplementation "androidx.test.ext:junit:$Versions.jUnitExtVersion"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$Versions.espressoVersion"
+}

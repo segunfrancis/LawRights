@@ -1,0 +1,54 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath("com.android.tools.build:gradle:$Versions.gradleVersion")
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:$Versions.gradlePluginVersion")
+        classpath("com.google.dagger:hilt-android-gradle-plugin:${Versions.hiltVersion}")
+        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$Versions.navigationVersion"
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle.kts files
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+subprojects {
+    afterEvaluate { project ->
+        if (project.hasProperty("android")) {
+            android {
+                compileSdkVersion = Versions.compileSdkVersion
+                buildToolsVersion Versions.buildToolsVersion
+                defaultConfig {
+                    minSdkVersion(Versions.minSdkVersion)
+                    targetSdkVersion(Versions.compileSdkVersion)
+                    testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+                    consumerProguardFiles "consumer-rules.pro"
+                }
+                compileOptions {
+                    sourceCompatibility = 1.8
+                    targetCompatibility = 1.8
+                }
+                kotlinOptions {
+                    jvmTarget = Versions.jvmTarget
+                }
+                buildFeatures {
+                    viewBinding true
+                }
+            }
+        }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
