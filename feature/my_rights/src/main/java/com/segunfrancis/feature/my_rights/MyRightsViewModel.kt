@@ -6,7 +6,6 @@ import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.cachedIn
 import com.segunfrancis.data.remote.repository.LawRightsPagingSource
-import com.segunfrancis.data.remote.repository.RemoteRepositoryImpl
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
@@ -15,9 +14,7 @@ class MyRightsViewModel @Inject constructor(private val pagingSource: LawRightsP
     ViewModel() {
 
     val myRights = Pager(
-        // Configure how data is loaded by passing additional properties to
-        // PagingConfig, such as prefetchDistance.
-        PagingConfig(pageSize = 20)
+        PagingConfig(pageSize = 10)
     ) {
         pagingSource
     }.flow

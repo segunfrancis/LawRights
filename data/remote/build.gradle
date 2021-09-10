@@ -35,6 +35,11 @@ dependencies {
     api "com.squareup.retrofit2:converter-gson:$Versions.retrofitVersion"
     api "com.squareup.okhttp3:logging-interceptor:$Versions.loggingInterceptorVersion"
 
+    // room database
+    implementation "androidx.room:room-ktx:$Versions.roomVersion"
+    implementation "androidx.room:room-runtime:$Versions.roomVersion"
+    kapt "androidx.room:room-compiler:$Versions.roomVersion"
+
     testImplementation "junit:junit:$Versions.jUnitVersion"
     androidTestImplementation "androidx.test.ext:junit:$Versions.jUnitExtVersion"
     androidTestImplementation "androidx.test.espresso:espresso-core:$Versions.espressoVersion"

@@ -8,7 +8,6 @@ import com.segunfrancis.data.remote.api.LawRightsApi
 import com.segunfrancis.data.remote.util.RemoteConstants.BASE_URL
 import com.segunfrancis.data.remote.util.RemoteConstants.NETWORK_TIMEOUT
 import com.segunfrancis.data.remote.util.RemoteConstants.SHARED_PREF_KEY
-import com.segunfrancis.data.remote.util.RemoteConstants.TOKEN_PREF_KEY
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -17,9 +16,7 @@ import dagger.hilt.components.SingletonComponent
 import java.util.concurrent.TimeUnit
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
-import okhttp3.Interceptor
 import okhttp3.OkHttpClient
-import okhttp3.Request
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -48,33 +45,11 @@ class RemoteModule {
     }
 
     @Provides
-    fun provideToken(preferences: SharedPreferences): String? {
-        return preferences.getString(TOKEN_PREF_KEY, "")
-    }
-
-   /* @Provides
-    fun provideHeaderInterceptor(token: String?): Interceptor {
-        return if (token != null) Interceptor {
-            val original: Request = it.request()
-            val request: Request = original.newBuilder()
-                .header("bearer", token)
-                .method(original.method, original.body)
-                .build()
-            it.proceed(request)
-        } else {
-            Interceptor {
-                it.proceed(it.request().newBuilder().build())
-            }
-        }
-    }*/
-
-    @Provides
     fun provideClient(loggingInterceptor: HttpLoggingInterceptor): OkHttpClient {
         return OkHttpClient().newBuilder()
             .callTimeout(NETWORK_TIMEOUT, TimeUnit.SECONDS)
             .connectTimeout(NETWORK_TIMEOUT, TimeUnit.SECONDS)
             .addInterceptor(loggingInterceptor)
-            //.addNetworkInterceptor(interceptor)
             .build()
     }
 

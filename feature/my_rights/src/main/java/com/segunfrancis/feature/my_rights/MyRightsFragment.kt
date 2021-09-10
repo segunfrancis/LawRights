@@ -22,7 +22,7 @@ class MyRightsFragment : BottomSheetDialogFragment() {
 
     private val viewModel by viewModels<MyRightsViewModel>()
 
-    private val rightsAdapter: MyRightsAdapter by lazy { MyRightsAdapter() }
+    private val rightsPagingAdapter: LawRightsPagingAdapter by lazy { LawRightsPagingAdapter() }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -36,14 +36,14 @@ class MyRightsFragment : BottomSheetDialogFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.rightRecyclerView.adapter = rightsAdapter
+        binding.rightRecyclerView.adapter = rightsPagingAdapter
 
         viewLifecycleOwner.lifecycleScope.launch {
             viewModel.myRights
                 .catch { Timber.e(it) }
                 .collectLatest { pagingData ->
                     Timber.d("PagedData: $pagingData")
-                    rightsAdapter.submitData(pagingData)
+                    rightsPagingAdapter.submitData(pagingData)
                 }
         }
     }

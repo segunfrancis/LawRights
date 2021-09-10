@@ -8,8 +8,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.segunfrancis.data.remote.model.DataX
 import com.segunfrancis.feature.my_rights.databinding.ItemRightsBinding
 
-class MyRightsAdapter :
-    PagingDataAdapter<DataX, MyRightsAdapter.MyRightsViewHolder>(RightsComparator) {
+class LawRightsPagingAdapter :
+    PagingDataAdapter<DataX, LawRightsPagingAdapter.MyRightsViewHolder>(RightsComparator) {
 
     class MyRightsViewHolder(private val binding: ItemRightsBinding) :
         RecyclerView.ViewHolder(binding.root) {

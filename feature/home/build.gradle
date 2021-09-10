@@ -23,6 +23,8 @@ android {
 
 dependencies {
     implementation(project(":data:remote"))
+    implementation(project(":common"))
+
     implementation "androidx.core:core-ktx:$Versions.coreKtxVersion"
     implementation "androidx.appcompat:appcompat:$Versions.appCompatVersion"
     implementation "com.google.android.material:material:$Versions.materialVersion"
