@@ -1,17 +1,13 @@
 package com.segunfrancis.data.remote.di
 
-import android.content.Context
-import android.content.SharedPreferences
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.segunfrancis.data.remote.api.LawRightsApi
 import com.segunfrancis.data.remote.util.RemoteConstants.BASE_URL
 import com.segunfrancis.data.remote.util.RemoteConstants.NETWORK_TIMEOUT
-import com.segunfrancis.data.remote.util.RemoteConstants.SHARED_PREF_KEY
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
-import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import java.util.concurrent.TimeUnit
 import kotlinx.coroutines.CoroutineDispatcher
@@ -37,11 +33,6 @@ class RemoteModule {
         return HttpLoggingInterceptor().also {
             it.level = HttpLoggingInterceptor.Level.BODY
         }
-    }
-
-    @Provides
-    fun provideSharedPreference(@ApplicationContext context: Context): SharedPreferences {
-        return context.getSharedPreferences(SHARED_PREF_KEY, Context.MODE_PRIVATE)
     }
 
     @Provides

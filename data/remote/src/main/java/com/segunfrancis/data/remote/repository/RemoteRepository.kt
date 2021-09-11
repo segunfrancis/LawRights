@@ -1,10 +1,12 @@
 package com.segunfrancis.data.remote.repository
 
 import com.segunfrancis.data.remote.model.LoginResponse
-import kotlinx.coroutines.flow.Flow
 
 interface RemoteRepository {
 
-    fun addToken(token: String): Flow<Unit>
+    fun addToken(token: String)
+    fun getToken(): String
+    fun addLastUpdated(time: Long)
+    fun getLastUpdated(): Long
     suspend fun login(): LoginResponse
 }

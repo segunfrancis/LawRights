@@ -3,11 +3,10 @@ package com.segunfrancis.data.remote.model
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity(tableName = "rights_table")
-data class DataX(
+@Entity(tableName = "remote_keys")
+data class RemoteKeys(
     @PrimaryKey
     val id: Int,
-    val is_deleted: Int,
-    val title: String,
-    val updated_at: String
+    val prevKey: Int?,
+    val nextKey: Int?
 )

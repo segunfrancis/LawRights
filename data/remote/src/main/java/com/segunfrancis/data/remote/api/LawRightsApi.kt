@@ -15,5 +15,5 @@ interface LawRightsApi {
     suspend fun login(@Body request: LoginRequest): LoginResponse
 
     @GET("api/rights")
-    suspend fun getAllRights(@Query("page") page: Int, @Header("Authorization") token: String): RightsResponse
+    suspend fun getAllRights(@Query("page") page: Int?, @Header("Authorization") token: String): RightsResponse
 }

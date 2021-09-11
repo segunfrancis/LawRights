@@ -9,7 +9,6 @@ import com.segunfrancis.data.remote.repository.RemoteRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 import kotlinx.coroutines.CoroutineExceptionHandler
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import timber.log.Timber
 
@@ -31,9 +30,7 @@ class HomeViewModel @Inject constructor(private val remoteRepository: RemoteRepo
         viewModelScope.launch(exceptionHandler) {
             val loginResponse = remoteRepository.login()
             Timber.d("LoginResponse: $loginResponse")
-            remoteRepository.addToken("Bearer ".plus(loginResponse.access_token)).collect {
-                Timber.d("Token updated")
-            }
+            remoteRepository.addToken("Bearer ".plus(loginResponse.access_token))
         }
     }
 }

@@ -36,8 +36,8 @@ dependencies {
     api "com.squareup.okhttp3:logging-interceptor:$Versions.loggingInterceptorVersion"
 
     // room database
-    implementation "androidx.room:room-ktx:$Versions.roomVersion"
-    implementation "androidx.room:room-runtime:$Versions.roomVersion"
+    api "androidx.room:room-ktx:$Versions.roomVersion"
+    api "androidx.room:room-runtime:$Versions.roomVersion"
     kapt "androidx.room:room-compiler:$Versions.roomVersion"
 
     testImplementation "junit:junit:$Versions.jUnitVersion"

@@ -40,6 +40,7 @@ subprojects {
                 }
                 kotlinOptions {
                     jvmTarget = Versions.jvmTarget
+                    freeCompilerArgs += ["-Xopt-in=kotlin.RequiresOptIn"]
                 }
                 buildFeatures {
                     viewBinding true
