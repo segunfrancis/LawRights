@@ -8,4 +8,35 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="border_stroke">#03A87D</color>
+
+    <!-- region Custom Colors -->
+    <color name="statusBarColor">#FFFFFF</color>
+    <color name="orangeColor">#FFB966</color>
+    <color name="small_card_background">#DCDCDC</color>
+    <!-- endregion -->
+
+    <!-- region Header section color -->
+    <color name="header_section_first_text_color">#03A87D</color>
+    <color name="header_section_second_text_color">#1A284B</color>
+    <!-- endregion -->
+
+    <!-- region Search bar section-->
+    <color name="search_bar_background_color">#F5F5F5</color>
+    <!-- endregion -->
+
+    <!-- region Content section-->
+    <color name="custom_section_first_text_color">#8EFFBB</color>
+    <!-- endregion -->
+
+    <!-- region Middle section -->
+    <color name="middle_section_first_text_color">#1A284B</color>
+    <color name="middle_section_text_color">#1A284B</color>
+    <color name="middle_section_first_card_color">#FFF0E6</color>
+    <color name="middle_section_second_card_color">#ECEBFF</color>
+    <color name="middle_section_third_card_color">#FFE7ED</color>
+    <color name="middle_section_fourth_card_color">#D9F6FF</color>
+    <color name="middle_section_fifth_card_color">#E6F7FF</color>
+    <color name="middle_section_sixth_card_color">#FFF0E6</color>
+    <color name="middle_section_seventh_card_color">#FFD8D0</color>
+    <!-- endregion -->
 </resources>

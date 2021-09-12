@@ -1,14 +1,14 @@
 plugins {
-    id 'com.android.library'
-    id 'org.jetbrains.kotlin.android'
+    id "com.android.library"
+    id "org.jetbrains.kotlin.android"
 }
 
 android {
-    compileSdkVersion 31
+    compileSdkVersion Versions.compileSdkVersion
 
     defaultConfig {
-        minSdkVersion 21
-        targetSdkVersion 31
+        minSdkVersion Versions.minSdkVersion
+        targetSdkVersion Versions.compileSdkVersion
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
@@ -25,16 +25,17 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = Versions.jvmTarget
     }
 }
 
 dependencies {
 
-    implementation 'androidx.core:core-ktx:1.6.0'
-    implementation 'androidx.appcompat:appcompat:1.3.1'
-    implementation 'com.google.android.material:material:1.4.0'
-    testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    implementation "androidx.core:core-ktx:$Versions.coreKtxVersion"
+    implementation "androidx.appcompat:appcompat:$Versions.appCompatVersion"
+    implementation "com.google.android.material:material:$Versions.materialVersion"
+    implementation "com.github.bumptech.glide:glide:$Versions.glideVersion"
+    testImplementation "junit:junit:$Versions.jUnitVersion"
+    androidTestImplementation "androidx.test.ext:junit:$Versions.jUnitExtVersion"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$Versions.espressoVersion"
 }

@@ -1,3 +1,27 @@
 <resources>
     <string name="app_name">LawRights</string>
+    <!-- region Header section -->
+    <string name="header_section_first_text">LawRights</string>
+    <string name="header_section_second_text">Ensuring citizen’s Rights with the rules of law</string>
+    <string name="header_section_image_view_content_description">Header notification</string>
+    <!-- endregion -->
+
+    <!-- Search section -->
+    <string name="search">Search</string>
+
+    <!-- region Content section -->
+    <string name="content_item_first_text">did you know?</string>
+    <string name="content_item_third_text">My Rights?</string>
+    <!-- endregion -->
+
+    <!-- region Middle section -->
+    <string name="quick_link_text">Quick Links</string>
+    <string name="my_right_text">My Rights</string>
+    <string name="my_duties_text">My Duties</string>
+    <string name="general_provision_text">General Provisions</string>
+    <string name="find_a_lawyer_text">Find a Lawyer</string>
+    <string name="know_your_rep_text">Know your Representatives</string>
+    <string name="constitution_text">Constitution</string>
+    <string name="report_violation_text">Report a Violation</string>
+    <!-- endregion -->
 </resources>

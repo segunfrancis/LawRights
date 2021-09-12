@@ -1,28 +1,234 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:scrollbarSize="0dp"
     tools:context="com.segunfrancis.feature.home.HomeFragment">
 
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/materialTextView"
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Home Fragment"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:fitsSystemWindows="true">
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/open_rights_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Open Bottom Sheet"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/materialTextView" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <include
+            android:id="@+id/header_section"
+            layout="@layout/header_section"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <include
+            android:id="@+id/search_section"
+            layout="@layout/search_section"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="25dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/header_section" />
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/view_pager_contents"
+            android:layout_width="match_parent"
+            android:layout_height="210dp"
+            android:layout_marginTop="16dp"
+            android:clipToPadding="false"
+            android:foregroundGravity="center"
+            android:overScrollMode="never"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/search_section" />
+
+        <LinearLayout
+            android:id="@+id/slider_dots"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:background="@drawable/indicator_background"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="6dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view_pager_contents" />
+
+        <TextView
+            android:id="@+id/middle_section_text"
+            style="@style/middle_section_static_text_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="13dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/slider_dots" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/middle_first_card_item"
+            style="@style/middle_section_first_card_style"
+            android:layout_width="0dp"
+            android:layout_height="110dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="6dp"
+            app:layout_constraintEnd_toStartOf="@+id/middle_second_card_item"
+            app:layout_constraintStart_toStartOf="@+id/middle_section_text"
+            app:layout_constraintTop_toBottomOf="@+id/middle_section_text">
+
+            <TextView
+                style="@style/middle_section_text_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/my_right_text" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/middle_second_card_item"
+            style="@style/middle_section_second_card_style"
+            android:layout_width="0dp"
+            android:layout_height="110dp"
+            android:layout_marginStart="6dp"
+            android:layout_marginEnd="25dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/middle_first_card_item"
+            app:layout_constraintTop_toTopOf="@+id/middle_first_card_item">
+
+            <TextView
+                style="@style/middle_section_text_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/my_duties_text" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/middle_third_card_item"
+            style="@style/middle_section_third_card_style"
+            android:layout_width="0dp"
+            android:layout_height="110dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="6dp"
+            app:layout_constraintEnd_toStartOf="@+id/middle_fourth_card_item"
+            app:layout_constraintStart_toStartOf="@+id/middle_first_card_item"
+            app:layout_constraintTop_toBottomOf="@+id/middle_first_card_item">
+
+            <TextView
+                style="@style/middle_section_text_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/general_provision_text" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/middle_fourth_card_item"
+            style="@style/middle_section_fourth_card_style"
+            android:layout_width="0dp"
+            android:layout_height="110dp"
+            android:layout_marginStart="6dp"
+            app:layout_constraintEnd_toEndOf="@+id/middle_second_card_item"
+            app:layout_constraintStart_toEndOf="@+id/middle_third_card_item"
+            app:layout_constraintTop_toTopOf="@+id/middle_third_card_item">
+
+
+            <TextView
+                style="@style/middle_section_text_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/find_a_lawyer_text" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/middle_fifth_card_item"
+            style="@style/middle_section_fifth_card_style"
+            android:layout_width="0dp"
+            android:layout_height="110dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="6dp"
+            app:layout_constraintEnd_toStartOf="@+id/middle_sixth_card_item"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/middle_third_card_item"
+            app:layout_constraintTop_toBottomOf="@+id/middle_third_card_item">
+
+
+            <TextView
+                style="@style/middle_section_text_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/know_your_rep_text" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/middle_sixth_card_item"
+            style="@style/middle_section_sixth_card_style"
+            android:layout_width="0dp"
+            android:layout_height="110dp"
+            android:layout_marginStart="6dp"
+            app:layout_constraintEnd_toEndOf="@+id/middle_fourth_card_item"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/middle_fifth_card_item"
+            app:layout_constraintTop_toTopOf="@+id/middle_fifth_card_item">
+
+            <TextView
+                style="@style/middle_section_text_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/constitution_text" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/middle_seventh_card_item"
+            style="@style/middle_section_seventh_card_style"
+            android:layout_width="0dp"
+            android:layout_height="110dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="24dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/middle_fourth_card_item"
+            app:layout_constraintStart_toStartOf="@+id/middle_fifth_card_item"
+            app:layout_constraintTop_toBottomOf="@+id/middle_fifth_card_item">
+
+            <TextView
+                style="@style/middle_section_text_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/report_violation_text" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="24dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineTop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="24dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="24dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

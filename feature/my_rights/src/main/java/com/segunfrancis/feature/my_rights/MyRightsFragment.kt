@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
-import androidx.paging.map
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.segunfrancis.feature.my_rights.databinding.FragmentMyRightsBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -43,13 +42,14 @@ class MyRightsFragment : BottomSheetDialogFragment() {
             viewModel.myRights
                 .catch { Timber.e(it) }
                 .collectLatest { pagingData ->
-                    pagingData.map {
-                        Timber.d("PagedData: $it")
-                    }
                     rightsPagingAdapter.submitData(pagingData)
                     viewModel.updateTime()
                 }
         }
+    }
+
+    override fun getTheme(): Int {
+        return R.style.ModalBottomSheetDialog
     }
 
     override fun onDestroyView() {

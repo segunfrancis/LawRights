@@ -11,6 +11,148 @@
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
-        <!-- Customize your theme here. -->
     </style>
+
+    <!-- region BottomSheet -->
+    <style name="ModalBottomSheetDialog" parent="@style/ThemeOverlay.MaterialComponents.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/CustomBottomSheet</item>
+    </style>
+
+    <style name="CustomBottomSheet" parent="Widget.MaterialComponents.BottomSheet">
+        <item name="shapeAppearanceOverlay">@style/CustomShapeAppearance</item>
+    </style>
+
+    <style name="CustomShapeAppearance" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopRight">24dp</item>
+        <item name="cornerSizeTopLeft">24dp</item>
+        <item name="cornerSizeBottomRight">0dp</item>
+        <item name="cornerSizeBottomLeft">0dp</item>
+    </style>
+    <!-- endregion -->
+
+    <!--region Header styles -->
+    <style name="header_section_first_text_style">
+        <item name="android:text">@string/header_section_first_text</item>
+        <item name="android:textSize">26sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/header_section_first_text_color</item>
+        <item name="fontFamily">@font/arimo_bold</item>
+    </style>
+
+    <style name="MyRightsHeaderTextStyle" parent="header_section_first_text_style">
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="header_section_second_text_style">
+        <item name="android:text">@string/header_section_second_text</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/header_section_second_text_color</item>
+        <item name="fontFamily">@font/arimo_bold</item>
+    </style>
+    <!-- endregion -->
+
+    <!-- region Search -->
+    <style name="search_home_style">
+        <item name="android:inputType">text</item>
+        <item name="android:background">@drawable/search_drawable_style</item>
+        <item name="android:hint">@string/search</item>
+        <item name="android:textSize">14sp</item>
+        <item name="drawableStartCompat">@drawable/ic_search</item>
+        <item name="android:paddingStart">25dp</item>
+        <item name="android:drawablePadding">15dp</item>
+    </style>
+    <!-- endregion -->
+
+    <!-- region Content styles -->
+    <style name="content_item_first_text">
+        <item name="android:text">@string/content_item_first_text</item>
+        <item name="textAllCaps">true</item>
+        <item name="fontFamily">@font/arimo_bold</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/custom_section_first_text_color</item>
+    </style>
+
+    <style name="content_item_second_text">
+        <item name="android:ellipsize">end</item>
+        <item name="android:lines">2</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="fontFamily">@font/arimo_bold</item>
+    </style>
+
+    <style name="content_item_third_text">
+        <item name="android:text">@string/content_item_third_text</item>
+        <item name="android:textSize">8sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="fontFamily">@font/arimo_bold</item>
+        <item name="android:padding">3dp</item>
+        <item name="android:background">@drawable/content_item_third_drawable</item>
+    </style>
+    <!-- endregion -->
+
+    <!-- region Middle section text styles -->
+    <style name="middle_section_static_text_style">
+        <item name="android:text">@string/quick_link_text</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:textColor">@color/middle_section_first_text_color</item>
+        <item name="fontFamily">@font/arimo_bold</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="middle_section_text_style">
+        <item name="android:textSize">17sp</item>
+        <item name="android:textColor">@color/middle_section_text_color</item>
+        <item name="fontFamily">@font/arimo_bold</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+    <!-- endregion -->
+
+    <!-- region Middle section card styles -->
+    <style name="middle_section_first_card_style">
+        <item name="android:backgroundTint">@color/middle_section_first_card_color</item>
+        <item name="cardCornerRadius">10dp</item>
+        <item name="cardElevation">0dp</item>
+    </style>
+
+    <style name="middle_section_second_card_style">
+        <item name="android:backgroundTint">@color/middle_section_second_card_color</item>
+        <item name="cardCornerRadius">10dp</item>
+        <item name="cardElevation">0dp</item>
+    </style>
+
+    <style name="middle_section_third_card_style">
+        <item name="android:backgroundTint">@color/middle_section_third_card_color</item>
+        <item name="cardCornerRadius">10dp</item>
+        <item name="cardElevation">0dp</item>
+    </style>
+
+    <style name="middle_section_fourth_card_style">
+        <item name="android:backgroundTint">@color/middle_section_fourth_card_color</item>
+        <item name="cardCornerRadius">10dp</item>
+        <item name="cardElevation">0dp</item>
+    </style>
+
+    <style name="middle_section_fifth_card_style">
+        <item name="android:backgroundTint">@color/middle_section_fifth_card_color</item>
+        <item name="cardCornerRadius">10dp</item>
+        <item name="cardElevation">0dp</item>
+    </style>
+
+    <style name="middle_section_sixth_card_style">
+        <item name="android:backgroundTint">@color/middle_section_sixth_card_color</item>
+        <item name="cardCornerRadius">10dp</item>
+        <item name="cardElevation">0dp</item>
+    </style>
+
+    <style name="middle_section_seventh_card_style">
+        <item name="android:backgroundTint">@color/middle_section_seventh_card_color</item>
+        <item name="cardCornerRadius">10dp</item>
+        <item name="cardElevation">0dp</item>
+    </style>
+    <!-- endregion -->
 </resources>
