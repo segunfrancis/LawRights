@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.ImageView
 import android.widget.LinearLayout
+import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.core.net.toUri
 import androidx.fragment.app.Fragment
@@ -108,6 +109,6 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     }
 
     private fun handleError(error: Throwable) {
-
+        Toast.makeText(requireContext(), error.localizedMessage, Toast.LENGTH_LONG).show()
     }
 }

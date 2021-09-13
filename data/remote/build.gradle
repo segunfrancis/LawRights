@@ -40,7 +40,13 @@ dependencies {
     api "androidx.room:room-runtime:$Versions.roomVersion"
     kapt "androidx.room:room-compiler:$Versions.roomVersion"
 
+    implementation "android.arch.core:core-testing:$Versions.archTestingCoreVersion"
     testImplementation "junit:junit:$Versions.jUnitVersion"
+    implementation "com.squareup.okhttp3:mockwebserver:$Versions.mockWebServer"
+    testImplementation "com.squareup.okhttp3:mockwebserver:$Versions.mockWebServer"
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$Versions.coroutineTestVersion"
+    testImplementation "io.mockk:mockk:$Versions.mockkVersion"
+
     androidTestImplementation "androidx.test.ext:junit:$Versions.jUnitExtVersion"
     androidTestImplementation "androidx.test.espresso:espresso-core:$Versions.espressoVersion"
 }

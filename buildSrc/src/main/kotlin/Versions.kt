@@ -27,4 +27,8 @@ object Versions {
     const val jUnitVersion = "4.13.2"
     const val jUnitExtVersion = "1.1.3"
     const val espressoVersion = "3.4.0"
+    const val archTestingCoreVersion = "1.1.1"
+    const val mockWebServer = "4.9.1"
+    const val mockkVersion = "1.9.3"
+    const val coroutineTestVersion = "1.5.1"
 }

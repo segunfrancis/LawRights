@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">LawRights</string>
+    <string name="home_text">Home</string>
+    <string name="feeds_text">Feeds</string>
+    <string name="bookmarks_text">Bookmarks</string>
+    <string name="settings_text">Settings</string>
 </resources>

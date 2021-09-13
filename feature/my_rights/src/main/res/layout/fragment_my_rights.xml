@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true"
+    android:orientation="vertical"
     tools:context="com.segunfrancis.feature.my_rights.MyRightsFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/header"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="wrap_content">
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/small_card"
@@ -18,9 +18,9 @@
             android:layout_height="8dp"
             app:cardBackgroundColor="@color/small_card_background"
             app:cardCornerRadius="8dp"
-            app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
-            app:layout_constraintStart_toStartOf="@id/guidelineStart"
-            app:layout_constraintTop_toTopOf="@id/guidelineTop" />
+            app:layout_constraintEnd_toEndOf="@id/guidelineOutEnd"
+            app:layout_constraintStart_toStartOf="@id/guidelineOutStart"
+            app:layout_constraintTop_toTopOf="@id/guidelineOutTop" />
 
         <ImageView
             android:id="@+id/overflow_icon"
@@ -28,7 +28,7 @@
             android:layout_height="wrap_content"
             android:src="@drawable/ic_overflow"
             app:layout_constraintBottom_toBottomOf="@id/small_card"
-            app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+            app:layout_constraintEnd_toEndOf="@id/guidelineOutEnd"
             app:layout_constraintTop_toTopOf="@id/small_card" />
 
         <View
@@ -37,62 +37,96 @@
             android:layout_height="1dp"
             android:layout_marginTop="24dp"
             android:background="@color/divider_color"
-            app:layout_constraintTop_toBottomOf="@id/small_card"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
-
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/my_right_text"
-            style="@style/MyRightsHeaderTextStyle"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:text="@string/my_right_text"
-            app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
-            app:layout_constraintStart_toStartOf="@id/guidelineStart"
-            app:layout_constraintTop_toBottomOf="@id/divider" />
-
-        <include
-            android:id="@+id/search_editText"
-            layout="@layout/search_section"
-            android:layout_width="0dp"
-            android:layout_height="60dp"
-            android:layout_marginTop="20dp"
-            app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
-            app:layout_constraintStart_toStartOf="@id/guidelineStart"
-            app:layout_constraintTop_toBottomOf="@id/my_right_text" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/right_recycler_view"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="12dp"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/search_editText"
-            tools:listitem="@layout/item_rights" />
+            app:layout_constraintTop_toBottomOf="@id/small_card" />
+
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guidelineStart"
+            android:id="@+id/guidelineOutStart"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             app:layout_constraintGuide_begin="24dp" />
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guidelineTop"
+            android:id="@+id/guidelineOutTop"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             app:layout_constraintGuide_begin="24dp" />
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guidelineEnd"
+            android:id="@+id/guidelineOutEnd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             app:layout_constraintGuide_end="24dp" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-</androidx.core.widget.NestedScrollView>
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/my_right_text"
+                style="@style/MyRightsHeaderTextStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/my_right_text"
+                app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+                app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                app:layout_constraintTop_toTopOf="@id/guidelineTop" />
+
+            <include
+                android:id="@+id/search_editText"
+                layout="@layout/search_section"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+                app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                app:layout_constraintTop_toBottomOf="@id/my_right_text" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/right_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="12dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/search_editText"
+                tools:listitem="@layout/item_rights" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineStart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="24dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineTop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="24dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineEnd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="24dp" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>
