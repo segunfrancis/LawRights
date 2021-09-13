@@ -15,7 +15,7 @@
         <ImageView
             android:id="@+id/content_image"
             android:layout_width="match_parent"
-            android:layout_height="210dp"
+            android:layout_height="220dp"
             android:scaleType="centerCrop"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -26,7 +26,7 @@
         <View
             android:id="@+id/view_custom"
             android:layout_width="match_parent"
-            android:layout_height="210dp"
+            android:layout_height="220dp"
             android:background="@drawable/content_custom_background"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -35,34 +35,34 @@
 
         <TextView
             android:id="@+id/content_static_text_first"
-            style="@style/content_item_first_text"
+            style="@style/FirstContentItemStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="90dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_marginBottom="8dp"
+            android:text="@string/did_you_know_text"
+            app:layout_constraintBottom_toTopOf="@id/content_title"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
             android:id="@+id/content_title"
-            style="@style/content_item_second_text"
+            style="@style/SecondContentItemStyle"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            app:layout_constraintStart_toStartOf="@+id/content_static_text_first"
-            app:layout_constraintTop_toBottomOf="@+id/content_static_text_first"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toTopOf="@id/content_static_text_second"
+            app:layout_constraintStart_toStartOf="@id/content_static_text_first"
             tools:text="Digital Assault can put you into jail for 15 years?" />
 
         <TextView
             android:id="@+id/content_static_text_second"
-            style="@style/content_item_third_text"
+            style="@style/ThirdContentItemStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="12dp"
+            android:text="@string/content_item_third_text"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/content_title"
-            app:layout_constraintTop_toBottomOf="@+id/content_title" />
+            app:layout_constraintStart_toStartOf="@id/content_title" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </com.google.android.material.card.MaterialCardView>

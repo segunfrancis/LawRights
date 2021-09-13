@@ -9,8 +9,7 @@ import androidx.lifecycle.lifecycleScope
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.segunfrancis.feature.my_rights.databinding.FragmentMyRightsBinding
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.flow.catch
-import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 import timber.log.Timber
 
@@ -37,13 +36,15 @@ class MyRightsFragment : BottomSheetDialogFragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.rightRecyclerView.adapter = rightsPagingAdapter
+        binding.searchEditText.etSearch.hint = resources.getString(R.string.search_rights)
 
         viewLifecycleOwner.lifecycleScope.launch {
             viewModel.myRights
-                .catch { Timber.e(it) }
+                .catch {
+                    Timber.e(it)
+                }
                 .collectLatest { pagingData ->
                     rightsPagingAdapter.submitData(pagingData)
-                    viewModel.updateTime()
                 }
         }
     }

@@ -34,6 +34,7 @@ dependencies {
     implementation "androidx.paging:paging-runtime:$Versions.pagingVersion"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$Versions.lifecycleVersion"
     implementation "com.jakewharton.timber:timber:$Versions.timberVersion"
+    implementation "com.airbnb.android:lottie:$Versions.lottieVersion"
 
     // Dagger Hilt
     implementation "com.google.dagger:hilt-android:$Versions.hiltVersion"

@@ -8,9 +8,10 @@
 
     <!-- Search section -->
     <string name="search">Search</string>
+    <string name="search_rights">Search for everything about Rights</string>
 
     <!-- region Content section -->
-    <string name="content_item_first_text">did you know?</string>
+    <string name="did_you_know_text">DID YOU KNOW?</string>
     <string name="content_item_third_text">My Rights?</string>
     <!-- endregion -->
 

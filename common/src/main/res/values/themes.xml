@@ -32,7 +32,7 @@
     <!-- endregion -->
 
     <!--region Header styles -->
-    <style name="header_section_first_text_style">
+    <style name="HeaderSectionMainTextStyle">
         <item name="android:text">@string/header_section_first_text</item>
         <item name="android:textSize">26sp</item>
         <item name="android:textStyle">normal</item>
@@ -40,11 +40,11 @@
         <item name="fontFamily">@font/arimo_bold</item>
     </style>
 
-    <style name="MyRightsHeaderTextStyle" parent="header_section_first_text_style">
+    <style name="MyRightsHeaderTextStyle" parent="HeaderSectionMainTextStyle">
         <item name="android:textSize">20sp</item>
     </style>
 
-    <style name="header_section_second_text_style">
+    <style name="HeaderSectionSubTextStyle">
         <item name="android:text">@string/header_section_second_text</item>
         <item name="android:textSize">13sp</item>
         <item name="android:textStyle">normal</item>
@@ -53,12 +53,15 @@
     </style>
     <!-- endregion -->
 
+    <style name="MyRightsTextStyle" parent="HeaderSectionSubTextStyle">
+        <item name="android:textSize">16sp</item>
+    </style>
+
     <!-- region Search -->
-    <style name="search_home_style">
+    <style name="SearchHomeStyle">
         <item name="android:inputType">text</item>
         <item name="android:background">@drawable/search_drawable_style</item>
         <item name="android:hint">@string/search</item>
-        <item name="android:textSize">14sp</item>
         <item name="drawableStartCompat">@drawable/ic_search</item>
         <item name="android:paddingStart">25dp</item>
         <item name="android:drawablePadding">15dp</item>
@@ -66,27 +69,24 @@
     <!-- endregion -->
 
     <!-- region Content styles -->
-    <style name="content_item_first_text">
-        <item name="android:text">@string/content_item_first_text</item>
+    <style name="FirstContentItemStyle">
         <item name="textAllCaps">true</item>
         <item name="fontFamily">@font/arimo_bold</item>
-        <item name="android:textSize">10sp</item>
+        <item name="android:textSize">12sp</item>
         <item name="android:textStyle">normal</item>
         <item name="android:textColor">@color/custom_section_first_text_color</item>
     </style>
 
-    <style name="content_item_second_text">
+    <style name="SecondContentItemStyle">
         <item name="android:ellipsize">end</item>
         <item name="android:lines">2</item>
         <item name="android:textStyle">normal</item>
-        <item name="android:textSize">13sp</item>
         <item name="android:textColor">@color/white</item>
         <item name="fontFamily">@font/arimo_bold</item>
     </style>
 
-    <style name="content_item_third_text">
-        <item name="android:text">@string/content_item_third_text</item>
-        <item name="android:textSize">8sp</item>
+    <style name="ThirdContentItemStyle">
+        <item name="android:textSize">10sp</item>
         <item name="android:textColor">@color/black</item>
         <item name="fontFamily">@font/arimo_bold</item>
         <item name="android:padding">3dp</item>
@@ -95,7 +95,7 @@
     <!-- endregion -->
 
     <!-- region Middle section text styles -->
-    <style name="middle_section_static_text_style">
+    <style name="MiddleSectionStaticTextStyle">
         <item name="android:text">@string/quick_link_text</item>
         <item name="android:textSize">22sp</item>
         <item name="android:textColor">@color/middle_section_first_text_color</item>
@@ -103,7 +103,7 @@
         <item name="android:textStyle">normal</item>
     </style>
 
-    <style name="middle_section_text_style">
+    <style name="MiddleSectionTextStyle">
         <item name="android:textSize">17sp</item>
         <item name="android:textColor">@color/middle_section_text_color</item>
         <item name="fontFamily">@font/arimo_bold</item>

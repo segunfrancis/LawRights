@@ -11,6 +11,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.viewpager.widget.ViewPager
 import com.segunfrancis.common.util.LoginResult
+import com.segunfrancis.common.util.NavigationDestinations
 import com.segunfrancis.feature.home.databinding.FragmentHomeBinding
 import com.segunfrancis.feature.home.model.ContentItem
 import dagger.hilt.android.AndroidEntryPoint
@@ -39,7 +40,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         setupPagerAdapter()
 
         binding.middleFirstCardItem.setOnClickListener {
-            findNavController().navigate("https://com.segunfrancis.feature/myrights".toUri())
+            findNavController().navigate(NavigationDestinations.TO_MYRIGHTS_FRAGMENT)
         }
     }
 
